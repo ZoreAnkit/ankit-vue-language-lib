@@ -1,9 +1,12 @@
 import en from './language/en'
 import fr from './language/fr'
+import store from './plugins/store'
 
 export default {
 
     install: (app) => {
+        app.provide(store)
+
         app.mixin({
             methods: {
                 translate(key) {
