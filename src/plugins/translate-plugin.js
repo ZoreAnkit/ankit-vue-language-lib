@@ -1,6 +1,6 @@
 import en from './language/en'
 import fr from './language/fr'
-import store from './plugins/store'
+import store from './store'
 
 export default {
 
