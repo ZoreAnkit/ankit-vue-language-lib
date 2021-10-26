@@ -1,16 +1,36 @@
 import en from './language/en'
 import fr from './language/fr'
-import store from './store'
 
 export default {
 
-    install: (Vue) => {
-        Vue.provide(store)
+    install: (Vue, rootStore) => {
+        rootStore.registerModule('languageStore', {
+            state: {
+                language: 'fr'
+            },
 
+            getters: {
+                getLanguage: (state) => {
+                    return state.language
+                }
+            },
+
+            mutations: {
+                SET_LANGUAGE(state, language) {
+                    state.language = language
+                }
+            },
+
+            actions: {
+                setLocalLanguage({ commit }, language) {
+                    commit('SET_LANGUAGE', language)
+                },
+            },
+        });
         Vue.mixin({
             methods: {
                 translate(key) {
-                    if (this.$store.state.language == 'fr') {
+                    if (rootStore.state.languageStore.language == 'fr') {
                         return fr[key];
                     } else {
                         return en[key];

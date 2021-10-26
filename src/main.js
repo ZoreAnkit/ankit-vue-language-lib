@@ -5,7 +5,7 @@ import store from './plugins/store'
 
 Vue.config.productionTip = false
 
-Vue.use(languagePlugin)
+Vue.use(languagePlugin, store)
 
 new Vue({
   store,
