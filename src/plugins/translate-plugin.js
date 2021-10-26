@@ -4,10 +4,10 @@ import store from './store'
 
 export default {
 
-    install: (app) => {
-        app.provide(store)
+    install: (Vue) => {
+        Vue.provide(store)
 
-        app.mixin({
+        Vue.mixin({
             methods: {
                 translate(key) {
                     if (this.$store.state.language == 'fr') {
