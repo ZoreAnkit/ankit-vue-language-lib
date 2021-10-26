@@ -1,3 +1,29 @@
-import { reactive } from 'vue'
+const state = {
+    language: 'fr'
+}
 
-export default reactive({ setLanguage: "fr"})
+const getters = {
+    getLanguage: (state) => {
+        return state.language
+    }
+}
+
+const mutations = {
+    SET_LANGUAGE(state, language) {
+        state.language = language
+    }
+}
+
+const actions = {
+    setLocalLanguage({ commit }, language) {
+        commit('SET_LANGUAGE', language)
+    },
+}
+
+export const language = {
+    namespaced: true,
+    state,
+    getters,
+    actions,
+    mutations
+}

@@ -1,17 +1,13 @@
-import languageStore from './store/language.store'
-import en from './en'
-import fr from './fr'
+import en from './language/en'
+import fr from './language/fr'
 
 export default {
 
     install: (app) => {
-        app.provide('LngGStore', languageStore)
-
         app.mixin({
-            inject: ['LngGStore'],
             methods: {
                 translate(key) {
-                    if (this.LngGStore['setLanguage'] == 'fr') {
+                    if (this.$store.state.language == 'fr') {
                         return fr[key];
                     } else {
                         return en[key];

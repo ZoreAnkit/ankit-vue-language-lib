@@ -1,16 +1,19 @@
 {
   "name": "ankit-vue-language-lib",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "build-plugin": "vue-cli-service build --target lib --name languagePlugin ./src/plugins/translate-plugin.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-select": "^3.16.0",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -35,6 +38,12 @@
     },
     "rules": {}
   },
+  "main": "./dist/languagePlugin.common.js",
+  "files": [
+    "dist/*"
+  ],
+  "license": "ISC",
+  "repository": "https://github.com/ZoreAnkit/ankit-vue-language-lib",
   "browserslist": [
     "> 1%",
     "last 2 versions",
