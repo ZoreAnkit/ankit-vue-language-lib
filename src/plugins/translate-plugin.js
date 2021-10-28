@@ -9,9 +9,11 @@ export default {
         Vue.mixin({
             methods: {
                 translate(key) {
-                    for (var languageKey of Object.keys(languageFiles)) {
-                        if (rootStore.state.languageStore.language == languageKey) {
-                            return languageFiles[languageKey][key];
+                    if (typeof languageFiles == 'object' && languageFiles !== null) {
+                        for (var languageKey of Object.keys(languageFiles)) {
+                            if (rootStore.hasModule('languageStore'))
+                                if (rootStore.state.languageStore.language == languageKey)
+                                    return languageFiles[languageKey][key];
                         }
                     }
                 }
