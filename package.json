@@ -1,6 +1,6 @@
 {
   "name": "ankit-vue-language-lib",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -43,6 +43,12 @@
   ],
   "license": "ISC",
   "repository": "https://github.com/ZoreAnkit/ankit-vue-language-lib",
+  "keywords": [
+    "vue",
+    "vue.js",
+    "plugin",
+    "internationalization"
+  ],
   "browserslist": [
     "> 1%",
     "last 2 versions",
