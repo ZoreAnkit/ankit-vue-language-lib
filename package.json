@@ -41,7 +41,7 @@
   "files": [
     "dist/*"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "repository": "https://github.com/ZoreAnkit/ankit-vue-language-lib",
   "keywords": [
     "vue",
