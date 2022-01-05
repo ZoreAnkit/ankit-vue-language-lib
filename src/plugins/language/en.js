@@ -1,4 +1,5 @@
 export default
-{
-    "title":"title",
-}
+    {
+        "title": "title",
+        "Hello World": "Hello World"
+    }
