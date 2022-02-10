@@ -110,16 +110,7 @@ npm i ankit-vue-language-lib
 
 ## Usage
 
-Import plugin along with the language files
-
-```
-import languagePlugin from "ankit-vue-language-lib"
-import store from './store/index'
-import en from './language/en'
-import fr from './language/fr'
-```
-
-Language files can be created as below
+STEP 1: Create language files
 
 Eg: en.js
 
@@ -141,19 +132,26 @@ export default
     }
 ```
 
-Use plugin along with the store and language files as below
+STEP 2: Import plugin along with the language files
+
+```
+import languagePlugin from "ankit-vue-language-lib"
+import store from './store/index'
+import en from './language/en'
+import fr from './language/fr'
+```
+
+STEP 3: Use plugin
 
 ```
 Vue.use(languagePlugin, store, { 'en': en, 'fr': fr })
 ```
 
-To create vuex store you will need to install vuex library
+STEP 4: If you dont have vuex store install vuex and create store file
 
 ```
 npm install vuex --save
 ```
-
-You will need to pass vuex store to the plugin. You can create vuex store as below
 
 ```
 import Vue from 'vue'
@@ -166,6 +164,15 @@ const store = new Vuex.Store({
 })
 
 export default store
+```
+
+STEP 5: Use translate() from plugin
+
+Syntax - translate(key_defined_in_language_file)
+
+Eg:
+```
+<div>{{translate('Hello World')}}</div>
 ```
 
 _For more information on how to install and use plugin, please refer to this (https://github.com/ZoreAnkit/demo-vue-language)_
