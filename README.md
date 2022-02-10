@@ -174,9 +174,45 @@ STEP 5: Use translate() from plugin
 
 Syntax - translate(key_defined_in_language_file)
 
-Eg:
+Eg: In template
 ```
 <div>{{translate('Hello World')}}</div>
+```
+
+Eg: In script
+```
+<script>
+export default{
+  methods:{
+    demo(){
+      return this.translate('Hello world');
+     }
+  }
+}
+</script>
+```
+
+STEP 6: Set locale variable of the plugin to desired language using vuex store actions 
+
+```
+ this.$store.commit("SET_LANGUAGE", 'fr'); //this sets locale language
+```
+
+STEP 7: Access state of store (OPTIONAL)
+
+```
+<script>
+import { mapGetters } from "vuex";
+export default {
+  computed:{
+     ...mapGetters(["language"]),
+  }
+  created(){
+    console.log('store state',this.langauge);
+  }
+}
+
+</script>
 ```
 
 
