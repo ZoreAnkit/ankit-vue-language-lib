@@ -132,6 +132,7 @@ export default
     }
 ```
 
+
 STEP 2: Import plugin along with the language files
 
 ```
@@ -141,11 +142,13 @@ import en from './language/en'
 import fr from './language/fr'
 ```
 
+
 STEP 3: Use plugin
 
 ```
 Vue.use(languagePlugin, store, { 'en': en, 'fr': fr })
 ```
+
 
 STEP 4: If you dont have vuex store install vuex and create store file
 
@@ -166,6 +169,7 @@ const store = new Vuex.Store({
 export default store
 ```
 
+
 STEP 5: Use translate() from plugin
 
 Syntax - translate(key_defined_in_language_file)
@@ -174,6 +178,7 @@ Eg:
 ```
 <div>{{translate('Hello World')}}</div>
 ```
+
 
 _For more information on how to install and use plugin, please refer to this (https://github.com/ZoreAnkit/demo-vue-language)_
 
