@@ -174,12 +174,12 @@ STEP 5: Use translate() from plugin
 
 Syntax - translate(key_defined_in_language_file)
 
-Eg: In template
+Eg: For template
 ```
 <div>{{translate('Hello World')}}</div>
 ```
 
-Eg: In script
+Eg: For script
 ```
 <script>
 export default{
